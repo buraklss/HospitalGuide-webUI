@@ -1,0 +1,79 @@
+<app-navbar> </app-navbar>
+
+
+<div class="container m-1 p-2">
+
+    <div class="row">
+       
+        <div class="col">  </div>
+        <div class="col">  </div>
+        <div class="col">
+  <br><br>
+          <form [formGroup]="registerform" class="form-group form-inline" (ngSubmit)="register()">
+  
+              <input class="form-control mr-sm-2 p-1 m-1" type="text" name="PassID" id="PassID" formControlName="PassID" placeholder="Pass_ID">
+              <span class="help-block" *ngIf="registerform.get('PassID').hasError('required') && registerform.get('PassID').touched">
+                  * Required
+                </span>
+              <br>
+              <input class="form-control mr-sm-2 p-1 m-1" type="text" name="Name" id="Name" formControlName="Name" placeholder="Name">
+              <span class="help-block" *ngIf="registerform.get('Name').hasError('required') && registerform.get('Name').touched">
+                  * Required
+                </span>
+              <br>
+              <input class="form-control mr-sm-2 p-1 m-1" type="text" name="Surname" id="Surname" formControlName="Surname" placeholder="Surname">
+              <span class="help-block" *ngIf="registerform.get('Surname').hasError('required') && registerform.get('Surname').touched">
+                  * Required
+                </span>
+              <br>
+
+              <!--  -->
+
+               
+              <!--  -->
+              
+              <br>
+              <input class="form-control mr-sm-2 p-1 m-1" type="text" name="Mail" id="Mail" formControlName="Mail" placeholder="Mail">
+              <span class="help-block" *ngIf="registerform.get('Mail').hasError('required') && registerform.get('Mail').touched">
+                  * Required
+                </span>
+              <br>
+              <input class="form-control mr-sm-2 p-1 m-1" type="text" name="Citizenship" id="Citizenship" formControlName="Citizenship" placeholder="Citizenship">
+              <span class="help-block" *ngIf="registerform.get('Citizenship').hasError('required') && registerform.get('Citizenship').touched">
+                  * Required
+                </span>
+              <br>
+              <input class="form-control mr-sm-2 p-1 m-1" type="text" name="Phone" id="Phone" formControlName="Phone" placeholder="Phone">
+              <span class="help-block" *ngIf="registerform.get('Phone').hasError('required') && registerform.get('Phone').touched">
+                  * Required
+                </span>
+              <br>
+              <input class="form-control mr-sm-2 p-1 m-1" type="password" name="Password" id="Password" formControlName="Password" placeholder="Password">
+              <span class="help-block" *ngIf="registerform.get('Password').hasError('required') && registerform.get('Password').touched">
+                  * Required
+                </span>
+              <br>
+              <select class="custom-select custom-select-md form-control mr-sm-2 m-1 "  style="width: 180px;" name="Gender" id="Gender" formControlName="Gender" required>
+                  <option value="">Select Gender        </option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Sexlessness">Sexlessness</option>
+                
+                </select>
+                <span class="help-block" *ngIf="registerform.get('Gender').hasError('required') && registerform.get('Gender').touched">
+                    *Required
+                  </span>
+        <br>
+            <button class="btn btn-outline-success my-2 my-sm-0 m-1" type="submit" >Register</button>
+            <br>
+            
+          </form><br><br><br>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+      <div class="row"> </div>
+    </div>
+
+
+    <app-foot> </app-foot>

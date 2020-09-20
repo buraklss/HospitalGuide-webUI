@@ -1,0 +1,199 @@
+<app-navbar> </app-navbar>
+
+
+
+<div class="jumbotron" style="background-color: white">
+  <div class="container cc" style="background-color:#ededed">
+    <div class="row">
+      <div class="col-6">
+
+        <div class="form-group ">
+          <label><h6>Clinic:</h6></label>
+          <select class="form-control" [(ngModel)]="gethospital.id" name="id" (change)="getd($event)">
+            <option selected>Choose...</option>
+            <option *ngFor="let c of clinics" value="{{c.id}}">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group ">
+          <label for="inputState"><h6>Doctor:</h6></label>
+          <select id="inputState" class="form-control" [(ngModel)]="gethospital.did" name="did" (change)="getdays($event)">
+            <option selected>Choose...</option>
+            <option *ngFor="let d of doctors" value="{{d.id}}">{{d.title}} {{d.name}} {{d.surname}}</option>
+          </select>
+        </div>
+
+
+      </div>
+      <div class="col-6">
+        <div>
+          <ul class="nav nav-tabs">
+            <li class="nav-item" *ngFor="let d of days">
+              <a class="nav-link " name="{{d.id}" id="{{d.id}}" data-toggle="tab" href="#a{{d.id}}" (click)="gethours(d)">{{d.date
+                | date }}</a>
+
+            </li>
+
+
+
+
+
+
+
+          </ul>
+          <div class="tab-content">
+            <div *ngFor="let d of days" class=" tab-pane  fade  " id="a{{d.id}}">
+
+
+               
+              <button *ngFor="let h of hours" type="button" class="btn btn-success" style="margin: 10px" (click)="getapp(h)"
+                data-toggle="modal" data-target="#exampleModal">
+                {{h.time | date: 'shortTime'}}
+              </button>
+              
+
+
+
+
+
+            </div>
+
+            <div class="row" style="height: 80px; width: 20px;"> </div>
+            <div class="row">
+              <div *ngIf="!days  && !hours" >
+                <h6>          
+                    Please fill the required fields to create an appointment.
+
+                </h6>
+              </div>
+            
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-4"> </div>
+      <div class="col-4 text-center">
+
+
+      </div>
+      <div class="col-4"> </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel text-center">Appointment İnformation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+
+          <div class="ui-dialog-content ui-widget-content" style="height: auto;">
+
+            <form id="saveRandevuForm" name="saveRandevuForm" method="post" action="/Randevu/default.xhtml" enctype="application/x-www-form-urlencoded">
+              <input type="hidden" name="saveRandevuForm" value="saveRandevuForm">
+              <table id="j_idt338" class="ui-panelgrid ui-widget formTable fullWidth" role="grid">
+                <tbody>
+                  <tr class="ui-widget-content" role="row">
+                    <td role="gridcell" class="ui-panelgrid-cell percent1x4"><label id="j_idt339" style="width: 145px"
+                        class="ui-outputlabel ui-widget">Hospital Name :
+                      </label></td>
+                    <td role="gridcell" class="ui-panelgrid-cell percent3x4"><span class="inputLike disabled fullWidth">
+
+                        <label *ngFor="let d of onedoctor"> {{d.hospitalName}} </label>
+
+                      </span></td>
+                  </tr>
+                  <tr class="ui-widget-content" role="row">
+                    <td role="gridcell" class="ui-panelgrid-cell percent1x4"><label id="j_idt341" class="ui-outputlabel ui-widget">Doctor
+                        Name :
+                      </label></td>
+                    <td role="gridcell" class="ui-panelgrid-cell percent3x4"><span class="inputLike disabled fullWidth">
+
+                        <label *ngFor="let d of onedoctor"> {{d.title}} {{d.name}} {{d.surname}}</label>
+
+                      </span></td>
+                  </tr>
+                  <tr class="ui-widget-content" role="row">
+                    <td role="gridcell" class="ui-panelgrid-cell percent1x4"><label id="j_idt343" class="ui-outputlabel ui-widget">Clinic
+                        Name :
+                      </label></td>
+                    <td role="gridcell" class="ui-panelgrid-cell percent3x4"><span class="inputLike disabled fullWidth">
+
+
+                        <label *ngFor="let d of onedoctor"> {{d.clinic}} </label>
+
+
+                      </span></td>
+                  </tr>
+
+                  <tr class="ui-widget-content" role="row">
+                    <td role="gridcell" class="ui-panelgrid-cell percent1x4"><label id="j_idt347" class="ui-outputlabel ui-widget">Appointment
+                        Day :
+                      </label></td>
+                    <td role="gridcell" class="ui-panelgrid-cell percent3x4"><span class="inputLike disabled fullWidth">
+
+
+                        <label> {{dayyy?.date | date: 'shortDate'}} </label>
+
+
+                      </span></td>
+                  </tr>
+
+                  <tr class="ui-widget-content" role="row">
+                    <td role="gridcell" class="ui-panelgrid-cell percent1x4"><label id="j_idt347f" class="ui-outputlabel ui-widget">Appointment
+                        Hour :</label></td>
+                    <td role="gridcell" class="ui-panelgrid-cell percent3x4"><span class="inputLike disabled fullWidth">
+
+
+                        <label> {{hourrr?.time | date: 'shortTime'}} </label>
+
+
+                      </span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="getappset()">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div> </div>
+  <br> <br>
+  <app-foot> </app-foot>

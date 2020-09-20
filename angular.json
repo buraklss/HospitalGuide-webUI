@@ -1,0 +1,170 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "HospitalGuide-webUI": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/HospitalGuide-webUI",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/web.config"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/alertifyjs/build/css/alertify.min.css",
+              "node_modules/alertifyjs/build/css/themes/bootstrap.min.css",
+              "src/styles.css",
+
+
+
+              "node_modules/bootstrap/dist/admin/AdminLTE.min.css",
+              "node_modules/bootstrap/dist/admin/askins.min.css",
+              "node_modules/bootstrap/dist/admin/morris.css",
+              "node_modules/bootstrap/dist/admin/jquery-jvectormap.css",
+              "node_modules/bootstrap/dist/admin/bootstrap-datepicker.min.css",
+              "node_modules/bootstrap/dist/admin/bootstrap3-wysihtml5.min.css",
+              "node_modules/bootstrap/dist/admin/daterangepicker.css"
+              
+
+            ],
+            "scripts": [
+              "node_modules/bootstrap/js/jquery-2.2.4.min.js",
+              "node_modules/bootstrap/js/src/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap/js/src/plugins.js",
+              "node_modules/bootstrap/js/src/active.js",
+              "node_modules/alertifyjs/build/alertify.min.js",
+
+              
+              "node_modules/bootstrap/dist/admin/jquery.min.js",
+              "node_modules/bootstrap/dist/admin/jquery-ui.min.js",
+              "node_modules/bootstrap/dist/admin/raphael.min.js",
+              "node_modules/bootstrap/dist/admin/morris.min.js",
+              "node_modules/bootstrap/dist/admin/jquery.sparkline.min.js",
+              "node_modules/bootstrap/dist/admin/jquery-jvectormap-1.2.2.min.js",
+              "node_modules/bootstrap/dist/admin/jquery-jvectormap-world-mill-en.js",
+              "node_modules/bootstrap/dist/admin/jquery.knob.min.js",
+              "node_modules/bootstrap/dist/admin/moment.min.js",
+              "node_modules/bootstrap/dist/admin/bootstrap-datepicker.min.js",
+              "node_modules/bootstrap/dist/admin/bootstrap3-wysihtml5.all.min.js",
+              "node_modules/bootstrap/dist/admin/jquery.slimscroll.min.js",
+              "node_modules/bootstrap/dist/admin/fastclick.js",
+              "node_modules/bootstrap/dist/admin/adminlte.min.js",
+              "node_modules/bootstrap/dist/admin/dashboard.js",
+              "node_modules/bootstrap/dist/admin/demo.js",
+              "node_modules/bootstrap/dist/admin/daterangepicker.js"
+
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "HospitalGuide-webUI:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "HospitalGuide-webUI:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "HospitalGuide-webUI:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "HospitalGuide-webUI-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "HospitalGuide-webUI:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "HospitalGuide-webUI:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "HospitalGuide-webUI"
+}

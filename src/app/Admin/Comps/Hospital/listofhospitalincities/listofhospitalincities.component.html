@@ -1,0 +1,78 @@
+<div class="wrapper" *ngIf="!userauthentication">
+  <app-adminNavbar> </app-adminNavbar>
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Hospitals List
+        <small>Control panel</small>
+      </h1>
+
+    </section>
+
+
+
+    <!-- addform star  -->
+    <div class="row">
+      <div class="col-xs-12 table-responsive m-2">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+        
+              <th> City</th>
+              <th> Dictrict </th>
+              <th> Location  </th>
+            <th>Hospital Name</th>
+            <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of court">
+            
+              <td>{{c.city }}  </td>
+              <td>{{c.district}} </td>
+ 
+              <td style="width:120px">{{c.location}} </td>
+              <td>{{c.name}} </td>
+              <th>{{c.phone}}</th>
+              <td style="padding:0px">
+
+                <a href="/uphospital/{{c.id}}" type="submit" class="btn btn-warning ">Update</a>
+                <a href="/listofclinics/{{c.id}}" type="submit" class="btn btn-info m-2 ">List of Clinics</a>
+                <a href="/listofcommentinhospital/{{c.id}}" type="submit" class="btn btn-primary m-2 ">List of Comments</a>
+                 
+                <button type="submit" class="btn btn-danger  m-2" (click)="delete(c.id)">Delete</button>
+
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- /.col -->
+    </div>
+
+    <!--  -->
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <app-adminFoot> </app-adminFoot>
+
+
+</div>
+
+<p *ngIf="userauthentication">
+  //Unauthorization
+
+</p>

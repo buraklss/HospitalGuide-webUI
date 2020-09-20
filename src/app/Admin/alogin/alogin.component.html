@@ -1,0 +1,49 @@
+<div *ngIf="userauthentication" class="login-box">
+  <div class="login-logo">
+    <a><b>Admin</b> Hospital Guide</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+
+
+    <form #adminloginform="ngForm" (ngSubmit)="login()">
+      <div class="form-group has-feedback">
+        <input name="Mail" [(ngModel)]="loginuser.Mail" required type="email" class="form-control" placeholder="Admin Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input name="Password" [(ngModel)]="loginuser.Password" required type="password" class="form-control"
+          placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-4">
+
+        </div>
+        <!-- /.col -->
+        <div class="col-4">
+          <button [disabled]="!adminloginform.valid" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        </div>
+        <!-- /.col -->
+      </div>
+      {{sonuc}}
+    </form>
+
+    <!-- /.social-auth-links -->
+
+
+
+  </div>
+  <!-- /.login-box-body -->
+</div>
+
+
+
+
+
+<p *ngIf="!userauthentication">
+  You are already is login..
+  <a href="dashboard" class="btn btn-primary m-3">Go Dashboard</a>
+  <button class="btn btn-danger m-5" (click)="logout()" type="submit">LOG
+    OUT</button>
+</p>

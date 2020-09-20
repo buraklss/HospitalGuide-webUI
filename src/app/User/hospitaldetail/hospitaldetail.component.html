@@ -1,0 +1,135 @@
+<app-navbar> </app-navbar>
+
+
+<!-- ##### Google Maps End ##### -->
+<div class="map-area mt-30" [innerHTML]="map | html">
+    
+</div>
+
+<!-- ##### Contact Area Start ##### -->
+<section class="contact-area gg">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="contact-content-area">
+                  <div class="row">
+                      <div class="col-12 col-md-4">
+                          <div class="contact-content contact-information">
+                              <h4>Hospital</h4>
+                              <p>{{hos?.name}}</p>
+                  
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                          <div class="contact-content contact-information">
+                              <h4>Address</h4>
+                              <p>{{hos?.location}}</p>
+                              <p>{{hos?.district}} {{hos?.city}}</p>
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                          <div class="contact-content contact-information">
+                              <h4>Phone</h4>
+                              <p> 0{{hos?.phone}} </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- ##### Contact Area End ##### -->
+<a class="btn btn-success crose-btn header-btn" href="clinics/{{hosid}}" >Make An Appointment </a>
+              
+
+<section class="blog-content-area section-padding-100 center  b">
+  <div class="container fff">
+    <div class="row justify-content-between">
+      <!-- Blog Posts Area -->
+      <div class="col-12 col-lg-8 g">
+        <div class="blog-posts-area ">
+
+
+
+          <!-- Comment Area Start -->
+          <div class="comment_area clearfix c">
+            <h4 class="headline "> {{leng}} Comments for {{hos?.name}}
+              
+            </h4>
+
+
+            <h4 class="headline c"> 
+                <div class="rate1  center" *ngFor="let star of sonuc1">
+                    ★
+                  </div>
+            </h4>
+            
+       
+            <ol class="p-19">
+              <!-- Single Comment Area -->
+              <li class="single_comment_area">
+                <div class="comment-wrapper d-flex" *ngFor="let com of comments">
+                  <!-- Comment Meta -->
+                  <div class="comment-author">
+                    <img src="assets/profile.jpg" alt="" style=" height:70px">
+                  </div>
+                  <!-- Comment Content -->
+                  <div class="comment-content">
+                    <span class="comment-date"> {{com?.commettime | date}} | {{com?.gander}}</span>
+                    <h5>{{com?.username}} {{com?.surname}}</h5>
+                    <p>{{com?.comment}}</p>
+
+                  </div>
+                </div>
+
+              </li>
+
+            </ol>
+          </div>
+
+        </div>
+      </div>
+      <div class="leave-comment-area mt-50 clearfix g">
+        <div class="comment-form">
+          <h4 class="headline">Write a Comment </h4>
+          <!-- Contact Form Area -->
+          <div class="contact-form-area">
+            <form (ngSubmit)="addcomment()">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <div class="rate">
+                      <input type="radio" id="star5" name="rate" value="5" (click)="onClick(5)" />
+                      <label for="star5" title="text">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4" (click)="onClick(4)" />
+                      <label for="star4" title="text">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3" (click)="onClick(3)" />
+                      <label for="star3" title="text">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2" (click)="onClick(2)" />
+                      <label for="star2" title="text">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" (click)="onClick(1)" />
+                      <label for="star1" title="text">1 star</label>
+                    </div>
+
+
+                    <textarea [(ngModel)]="comment.comment" class="form-control" name="comment" id="message" type="text"
+                      cols="20" rows="4" placeholder="Message"></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn crose-btn mt-15">Post Comment</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<app-foot> </app-foot>

@@ -1,0 +1,83 @@
+   <!-- ##### Header Area Start ##### -->
+   <header class="header-area">
+
+      <!-- ***** Top Header Area ***** -->
+      <div class="top-header">
+          <div class="container">
+              <div class="row">  <span class="badge badge-success" *ngIf="system1">Online</span>
+                <span class="badge badge-danger" *ngIf="!system1">Offline</span>
+                  <div class="col-12">
+                      <div class="top-header-content d-flex flex-wrap align-items-center justify-content-between">
+                          <!-- Top Header Meta -->  
+                          <div class="top-header-meta d-flex flex-wrap">
+                              
+                              <a href="#" class="open" data-toggle="tooltip" data-placement="bottom" title="10 Am to 6 PM"><i class="fa fa-clock-o" aria-hidden="true"></i> <span>Opening Hours - 10 Am to 6 PM</span></a>
+                              <!-- Social Info -->
+                              <div class="top-social-info">
+                                  
+                                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                  <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                
+                              </div>
+                              
+                          </div>
+                          <!-- Top Header Meta -->
+                          <div class="top-header-meta">
+                              <a href="mailto:info.deercreative@gmail.com" class="email-address"><i class="fa fa-envelope" aria-hidden="true"></i> <span>hospital-guide@system.com</span></a>
+                              <a href="#" class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <span>+12 345 678 910</span></a>
+                          
+                                </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- ***** Top Header Area ***** -->
+
+      <!-- ***** Navbar Area ***** -->
+      <div class="crose-main-menu">
+          <div class="classy-nav-container breakpoint-off">
+              <div class="container">
+                  <!-- Menu -->
+                  <nav class="classy-navbar justify-content-between" id="croseNav">
+
+                      <!-- Nav brand -->
+                      <a href="homepage" class="nav-brand"><img src="assets/logo.png" alt=""></a>
+
+                      <!-- Navbar Toggler -->
+                      <div class="classy-navbar-toggler">
+                          <span class="navbarToggler"><span></span><span></span><span></span></span>
+                      </div>
+
+                      <!-- Menu -->
+                      <div class="classy-menu">
+
+                          <!-- close btn -->
+                          <div class="classycloseIcon">
+                              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                          </div>
+
+                          <!-- Nav Start -->
+                          <div class="classynav">
+                              <ul>
+                                  <li><a href="homepage">Home</a></li>
+                              
+                                  
+                                  <li><a href="contact">Contact</a></li>
+                                  <li><a href="register" *ngIf="userauthentication" >REGISTER</a></li>
+                                  <li><a href="login" *ngIf="userauthentication">LOGIN</a></li>
+                                  <li><a href="profile" *ngIf="!userauthentication">Profile</a></li>
+                                  <li><button class="btn crose-btn header-btn" *ngIf="!userauthentication" (click)="logout()" type="submit">LOG OUT</button></li>
+              
+                              </ul>
+                          </div>
+                          <!-- Nav End -->
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      </div>
+      <!-- ***** Navbar Area ***** -->
+  </header>
+  <!-- ##### Header Area End ##### -->

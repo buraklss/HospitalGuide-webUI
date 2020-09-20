@@ -1,0 +1,34 @@
+table{
+    margin: auto
+}
+
+thead{
+    background-color: rgb(61, 4, 4);
+  
+}
+
+
+tr:hover {
+    background-color: rgb(253, 191, 150);
+    color: rgb(7, 5, 4);
+   
+}
+
+.renk{
+    color: white;
+}
+
+.g{
+    margin: auto
+}
+.b{
+  
+    margin-left: 25%
+}
+.c{
+  
+    margin-left: 40%
+}
+a{
+    background-color: rgb(252, 172, 172)
+}

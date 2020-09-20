@@ -1,0 +1,24 @@
+a:hover {
+    background-color: teal;
+    color: blue;
+   
+}
+
+
+div.ustumegel:hover{
+    background-color: #6BCEFC;
+   
+    /* border-style: solid; 
+    border-color: black;
+    */
+}
+
+.gg{
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+button{
+    margin-left: 40%
+    
+}

@@ -1,0 +1,201 @@
+<header class="main-header">
+  <!-- Logo -->
+  <a href="/dashboard" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><b>H</b>G</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg"><b>Hospital</b> Guide</span>
+  </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+    <a href="/dashboard" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <span class="hidden-xs " style="text-align:bold"> Admin: {{admin}}</span>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+
+        <!-- Notifications: style can be found in dropdown.less -->
+
+        <!-- Tasks: style can be found in dropdown.less -->
+        <div class="row">
+          <!-- User Account: style can be found in dropdown.less -->
+
+          <li class="dropdown user user-menu">
+              <button class="btn crose-btn header-btn" *ngIf="!userauthentication" (click)="logout()" type="submit">LOG
+                  OUT</button>
+
+          </li>
+         
+
+          <!-- Control Sidebar Toggle Button -->
+        </div>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+
+      <div class="pull-left info">
+        <p>Alexander Pierce</p>
+
+      </div>
+    </div>
+    <!-- search form -->
+
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">MAIN NAVIGATION</li>
+      <li class=" treeview">
+        <a href="countrylist">
+          <i class="fa fa-dashboard"></i> <span>Countries</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="countrylist"><i class="fa fa-circle-o"></i> List of Countries</a></li>
+          <li class=""><a href="addcounrty"><i class="fa fa-edit"></i> Add Countries</a></li>
+
+
+        </ul>
+      </li>
+
+
+      <li class=" treeview">
+        <a href="citieslist">
+          <i class="fa fa-dashboard"></i> <span>Cities</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="citieslist"><i class="fa fa-circle-o"></i> List of Cities</a></li>
+          <li class=""><a href="addcities"><i class="fa fa-edit"></i> Add Cities</a></li>
+
+
+        </ul>
+      </li>
+
+      <li class=" treeview">
+        <a href="hospitallist">
+          <i class="fa fa-dashboard"></i> <span>Hospitals</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="hospitallist"><i class="fa fa-circle-o"></i> List of Hospitals</a></li>
+          <li class=""><a href="addhospital"><i class="fa fa-edit"></i> Add Hospitals</a></li>
+
+
+        </ul>
+      </li>
+
+      <li class=" treeview">
+        <a href="cliniclist">
+          <i class="fa fa-dashboard"></i> <span>Clinisc</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="cliniclist"><i class="fa fa-circle-o"></i> List of Clinisc</a></li>
+          <li class=""><a href="addclinic"><i class="fa fa-edit"></i> Add Clinisc</a></li>
+
+
+        </ul>
+      </li>
+
+      <li class=" treeview">
+        <a href="doctorlist">
+          <i class="fa fa-dashboard"></i> <span>Doctors</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="doctorlist"><i class="fa fa-circle-o"></i> List of Doctors</a></li>
+          <li class=""><a href="adddoctor"><i class="fa fa-edit"></i> Add Doctors</a></li>
+
+
+        </ul>
+      </li>
+
+      <li class=" treeview">
+        <a href="dayslist">
+          <i class="fa fa-calendar"></i> <span>Days</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="dayslist"><i class="fa fa-calendar"></i> List of Days</a></li>
+          <li class=""><a href="addday"><i class="fa fa-edit"></i> Add Days</a></li>
+
+
+        </ul>
+      </li>
+
+      <li class=" treeview">
+        <a href="hourslist">
+          <i class="fa fa-calendar"></i> <span>Hours</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="hourslist"><i class="fa fa-calendar"></i> List of Hours</a></li>
+          <li class=""><a href="addhour"><i class="fa fa-edit"></i> Add Manuel Hours</a></li>
+          <!-- <li class=""><a href="addotohour"><i class="fa fa-edit"></i> Add All Hours</a></li> -->
+
+        </ul>
+      </li>
+
+      <li class=" treeview">
+        <a href="userlist">
+          <i class="fa fa-dashboard"></i> <span>Users</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="userlist"><i class="fa fa-circle-o"></i> List of Users</a></li>
+
+        </ul>
+      </li>
+
+
+      <li class=" treeview">
+        <a href="commentlist">
+          <i class="fa fa-dashboard"></i> <span>Comments</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="commentlist"><i class="fa fa-circle-o"></i> Comments of List</a></li>
+
+        </ul>
+      </li>
+
+
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
+
+<!-- Content Header (Page header) -->
+
+
+<!-- Main content -->
+
+<!-- /.content -->

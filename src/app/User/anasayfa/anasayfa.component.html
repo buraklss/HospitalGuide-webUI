@@ -1,0 +1,183 @@
+<app-navbar> </app-navbar>
+
+
+
+<!-- ##### Hero Area Start ##### -->
+
+<div>
+    <!-- Single Hero Slide -->
+
+    <div class="single-hero-slide bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(assets/3002px.png);">
+        <!-- Post Content -->     
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Single Hero Slide -->
+
+</div>
+<!-- ##### Hero Area End ##### -->
+
+<!-- ##### Latest Sermons Area Start ##### -->
+<section class="latest-sermons-area section-padding-100-0"  *ngIf="!userauthentication">
+    <div class="container" *ngIf="data">
+        <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+                <div class="section-heading">
+                    <h2>Anyfield you want to touch</h2>
+                    <p>Get well soon, so you can once again experience all the fun and delight that life has to offer!</p>
+                    <br>
+                    <form class="" #loginform="ngForm" (ngSubmit)="serachcity()" >
+                            <input class="form-control " name="cityy" [(ngModel)]="search.cityy" type="search" placeholder="Search in Country" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+
+            <!-- Single Latest Sermons -->
+            <div *ngFor="let country of countries" class="col-12 col-md-6 col-lg-4">
+                <div class="single-latest-sermons mb-100">
+                    <a href="cities/{{country.routerlink}}" >
+                        <div class="sermons-thumbnail">
+                            <img src="{{country.flagimage}}" alt="">
+                            <!-- Date -->
+                            <div class="sermons-date flaginfo">
+                                <h6><span>{{country.name}}</span></h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-sermons-area section-padding-100-0"  *ngIf="!userauthentication">
+        <div class="container" *ngIf="!data">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>Anyfield you want to touch</h2>
+                        <p>Get well soon, so you can once again experience all the fun and delight that life has to offer!</p>
+                        <br>
+                        <form class="" #loginform="ngForm" (ngSubmit)="serachcity()" >
+                                <input class="form-control " name="cityy" [(ngModel)]="search.cityy" type="search" placeholder="Search in Country" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                              </form>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row justify-content-center">
+    
+    
+                <!-- Single Latest Sermons -->
+                <div *ngFor="let country of serachdata" class="col-12 col-md-6 col-lg-4">
+                    <div class="single-latest-sermons mb-100">
+                        <a href="cities/{{country.routerlink}}" >
+                            <div class="sermons-thumbnail">
+                                <img src="{{country.flagimage}}" alt="">
+                                <!-- Date -->
+                                <div class="sermons-date flaginfo">
+                                    <h6><span>{{country.name}}</span></h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="latest-sermons-area section-padding-100-0" *ngIf="userauthentication">
+    <div class="container" *ngIf="data">
+        <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+                <div class="section-heading">
+                    <h2>Anyfield you want to touch</h2>
+                    <p>Get well soon, so you can once again experience all the fun and delight that life has to offer!</p>
+                    <br>
+                    <form class="" #loginform="ngForm" (ngSubmit)="serachcity()" >
+                        <input class="form-control " name="cityy" [(ngModel)]="search.cityy" type="search" placeholder="Search in Country" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+
+            <!-- Single Latest Sermons -->
+            <div *ngFor="let country of countries" class="col-12 col-md-6 col-lg-4">
+                <div class="single-latest-sermons mb-100">
+                    <a href="/login" >
+                        <div class="sermons-thumbnail">
+                            <img src="{{country.flagimage}}" alt="">
+                            <!-- Date -->
+                            <div class="sermons-date flaginfo">
+                                <h6><span>{{country.name}}</span></h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-sermons-area section-padding-100-0" *ngIf="userauthentication">
+        <div class="container"  *ngIf="!data">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>Anyfield you want to touch</h2>
+                        <p>Get well soon, so you can once again experience all the fun and delight that life has to offer!</p>
+                        <br>
+                       
+                        <form class="" #loginform="ngForm" (ngSubmit)="serachcity()" >
+                            <input class="form-control " name="cityy" [(ngModel)]="search.cityy" type="search" placeholder="Search in Country" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row justify-content-center">
+    
+    
+                <!-- Single Latest Sermons -->
+                <div *ngFor="let country of serachdata" class="col-12 col-md-6 col-lg-4">
+                    <div class="single-latest-sermons mb-100">
+                        <a href="/login" >
+                            <div class="sermons-thumbnail">
+                                <img src="{{country.flagimage}}" alt="">
+                                <!-- Date -->
+                                <div class="sermons-date flaginfo">
+                                    <h6><span>{{country.name}}</span></h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ##### Latest Sermons Area End ##### -->
+
+
+
+<app-foot> </app-foot>

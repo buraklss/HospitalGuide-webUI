@@ -1,0 +1,73 @@
+<div class="wrapper" *ngIf="!userauthentication">
+  <app-adminNavbar> </app-adminNavbar>
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Comment List
+        <small>Control panel</small>
+      </h1>
+
+    </section>
+
+
+
+    <!-- addform star  -->
+    <div class="row">
+      <div class="col-xs-12 table-responsive m-2">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+        
+              <th>  User  Id </th>
+              <th> Comment  </th>
+              <th> Time  </th>
+              <th> Hospital Id  </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of court">
+            
+              <td>{{c.userId}} </td>
+              <td>{{c.comment}} </td>
+              <td>{{c.commentTime | date: 'short'}} </td>
+              <td>{{c.hospitalId}} </td>
+              <td style="padding:0px">
+
+             
+                <button type="submit" class="btn btn-danger  m-2" (click)="delete(c.id)">Delete</button>
+
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- /.col -->
+    </div>
+
+    <!--  -->
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <app-adminFoot> </app-adminFoot>
+
+
+</div>
+
+<p *ngIf="userauthentication">
+  //Unauthorization
+
+</p>

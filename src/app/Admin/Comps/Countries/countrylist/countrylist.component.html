@@ -1,0 +1,74 @@
+<div class="wrapper" *ngIf="!userauthentication">
+  <app-adminNavbar> </app-adminNavbar>
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Counrty List
+        <small>Control panel</small>
+      </h1>
+
+    </section>
+
+
+
+    <!-- addform star  -->
+    <div class="row">
+      <div class="col-xs-12 table-responsive m-2">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+        
+              <th>  Flag Image</th>
+              <th> Name  </th>
+              <th> Router Link  </th>
+            
+           
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of court">
+            
+              <td>{{c.flagimage}} </td>
+              <td>{{c.name}} </td>
+ 
+              <td>{{c.routerlink}} </td>
+              <td style="padding:0px">
+
+                <a href="/uppcounrty/{{c.id}}" type="submit" class="btn btn-warning ">Update</a>
+                <a href="/listofcities/{{c.routerlink}}" type="submit" class="btn btn-info m-2">List of Cities</a>
+                <button type="submit" class="btn btn-danger  m-2" (click)="delete(c.id)">Delete</button>
+
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- /.col -->
+    </div>
+
+    <!--  -->
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <app-adminFoot> </app-adminFoot>
+
+
+</div>
+
+<p *ngIf="userauthentication">
+  //Unauthorization
+
+</p>

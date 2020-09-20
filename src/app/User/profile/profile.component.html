@@ -1,0 +1,149 @@
+<app-navbar> </app-navbar>
+
+<br>
+
+
+<ul class="nav nav-pills mb-3 c" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+      aria-selected="true">My Appointment</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+      aria-selected="false">My Profile</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <br><br><br>
+
+    <table class="table" style="width:75%">
+      <thead class="renk">
+        <tr>
+          <th scope="col">Day</th>
+          <th> Hour </th>
+          <th> Doctor Name </th>
+          
+          <th> Gender </th>
+          <th> Clinic </th>
+          <th> Hospital </th>
+          <th>Process</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let day of randevularim" class="table">
+
+          <td scope="row">{{day.day | date}} </td>
+          <td> {{day.hour | date: 'shortTime'}}</td>
+          <td>{{day.title}} {{day.name}} {{day.surname}} </td>
+        
+          <td>{{day.gender}} </td>
+          <td> {{day.clinic}}</td>
+          <td> {{day.hospitalName}}</td>
+          <td>  <button type="submit"   (click)="deleterandevu(day.id)" class="btn btn-danger">Delete </button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br><br><br>
+
+
+
+
+  </div>
+
+
+
+
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <!-- ##### About Us Area Start ##### -->
+    <div class="about-us-area about-page section-padding-100">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-12 col-lg-6">
+
+
+            <!-- Team Members Area -->
+
+            <div class="single-team-members text-center mb-100">
+              <div class="team-thumb" style="background-image: url(assets/profile.jpg);">
+
+              </div>Mail:
+              <h6>{{usermail}}</h6>
+              <span>Profile id:{{userid}}</span>
+            </div>
+
+
+
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="about-content ">
+              <h2 class="text-center">My Profile </h2>
+              <!-- updada profile -->
+
+              <form #upProfile="ngForm" (ngSubmit)="updateProfile()" enctype="multipart/form-data">
+                <div class="form-group">
+                  Pass ID:
+                  <input [(ngModel)]="profileuser.passID" class="form-control mr-sm-2 p-1 m-1" type="text" name="PassID"
+                    id="PassID" placeholder="Pass ID">
+
+                  <br>Name:
+                  <input [(ngModel)]="profileuser.name" class="form-control mr-sm-2 p-1 m-1" type="text" name="Name" id="Name"
+                    placeholder="Name">
+
+                  <br>Surname:
+                  <input [(ngModel)]="profileuser.surname" class="form-control mr-sm-2 p-1 m-1" type="text" name="Surname"
+                    id="Surname" placeholder="Surname">
+
+                  <br>Gender:
+                  <select [(ngModel)]="profileuser.gender" class="custom-select  form-control m-1 " name="Gender" id="Gender"
+                    required>
+                    <option value="">Select Gender </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Sexlessness">Sexlessness</option>
+
+                  </select>
+                  <br><br>Mail:
+                  <input [(ngModel)]="profileuser.mail" class="form-control mr-sm-2 p-1 m-1" type="text" name="Mail" id="Mail"
+                    placeholder="Mail">
+
+                  <br>Citizenship:
+                  <input [(ngModel)]="profileuser.citizenship" class="form-control mr-sm-2 p-1 m-1" type="text" name="Citizenship"
+                    id="Citizenship" placeholder="Citizenship">
+
+                  <br>Phone:
+                  <input [(ngModel)]="profileuser.phone" class="form-control mr-sm-2 p-1 m-1" type="text" name="Phone"
+                    id="Phone" placeholder="Phone">
+
+                  <br>Password:
+                  <input [(ngModel)]="profileuser.password" class="form-control mr-sm-2 p-1 m-1" type="password" name="Password"
+                    id="Password" placeholder="Password">
+                  <br>
+                  <button class="btn btn-success form-control mr-sm-2 p-1 m-1" type="submit">Update</button>
+                </div>
+              </form>
+              <!--  -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ##### About Us Area End ##### -->
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<app-foot> </app-foot>

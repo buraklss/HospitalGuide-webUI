@@ -1,0 +1,37 @@
+<app-navbar> </app-navbar>
+
+<div class="container m-2 p-2">
+
+  <div class="row">
+      
+      <div class="col">  </div>
+      <div class="col">  </div>
+      <div class="col">
+          <br><br><br>
+        <form *ngIf="userauthentication" class="form-inline" #loginform="ngForm" (ngSubmit)="login()">
+
+            <input class="form-control mr-sm-2" name="Mail" [(ngModel)]="loginuser.Mail" required type="email" placeholder="Mail">
+            <br><br>
+            <input class="form-control mr-sm-2" name="Password" [(ngModel)]="loginuser.Password" required type="password" placeholder="Password">
+            <br><br>
+          <button class="btn btn-outline-success my-2 my-sm-0 center" [disabled]="!loginform.valid" type="submit">Login</button>
+          <a href="/forgetpassword" class="" style="margin-left:40px"> Forgot Password?</a>  <br>
+          
+        </form>
+
+      
+        
+         
+          <br>
+          {{sonuc}}
+        
+        <br><br>
+      </div>
+      <div class="col">
+      </div>
+      
+    </div>
+    <div class="row"> </div>
+  </div>
+
+  <app-foot> </app-foot>

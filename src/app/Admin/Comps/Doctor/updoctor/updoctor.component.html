@@ -1,0 +1,111 @@
+<div class="wrapper" *ngIf="!userauthentication">
+  <app-adminNavbar> </app-adminNavbar>
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Update Doctor
+        <small>Control panel</small>
+      </h1>
+
+    </section>
+
+
+
+    <!-- addform star  -->
+    <div class="box box-info">
+      <div class="box-header with-border">
+
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form class="form-horizontal" #addcountry="ngForm" (ngSubmit)="postcountry()" enctype="multipart/form-data">
+        <div class="box-body" style="width:850px" >
+
+
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Gender</label>
+            <div class="col-sm-10">
+
+
+              <select [(ngModel)]="country.gender" name="gender" class="custom-select custom-select-md form-control mr-sm-2"
+                required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Sexlessness">Sexlessness</option>
+
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Title</label>
+
+            <div class="col-sm-10">
+              <input required [(ngModel)]="country.title" name="title" type="text" class="form-control">
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-10">
+              <input required [(ngModel)]="country.name" name="name" type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Surname</label>
+
+            <div class="col-sm-10">
+              <input required [(ngModel)]="country.surname" name="surname" type="text" class="form-control">
+            </div>
+          </div>
+
+
+
+          <input required [(ngModel)]="country.hospitalClinicId" name="hospitalClinicId" type="hidden" class="form-control">
+
+
+
+          <!-- <div class="form-group">
+            <P></P>
+            <input type="file" id="exampleInputFile">
+
+          </div> -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer" style="width:700px">
+          <button type="submit" class="btn btn-default " (click)="cancel()">CANCEL</button>
+          <button type="submit" class="btn btn-info pull-right">SAVE</button>
+        </div>
+        <!-- /.box-footer -->
+      </form>
+    </div>
+    <!--  -->
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <app-adminFoot> </app-adminFoot>
+
+
+</div>
+
+<p *ngIf="userauthentication">
+  //Unauthorization
+
+</p>

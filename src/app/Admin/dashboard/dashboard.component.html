@@ -1,0 +1,249 @@
+<div class="wrapper" *ngIf="!userauthentication">
+  <app-adminNavbar> </app-adminNavbar>
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+
+    </section>
+
+
+
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>{{userlengt}}</h3>
+
+              <p>Registered User</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-user-circle"></i>
+            </div>
+            <a href="userlist" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>{{clengt}}<sup style="font-size: 20px"></sup></h3>
+
+              <p>Counrty</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-globe"></i>
+            </div>
+            <a href="countrylist" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>{{cities}}</h3>
+
+              <p>Cities</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-bandcamp"></i>
+            </div>
+            <a href="citieslist" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+
+        <!-- ./col -->
+      </div>
+      <div class="row">
+
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>{{hospital}}</h3>
+
+              <p>Hospitals</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-hospital-o"></i>
+            </div>
+            <a href="hospitallist" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box " style="background-color:cornflowerblue">
+            <div class="inner">
+              <h3>{{clinics}}</h3>
+
+              <p>Clinics</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-hospital-o"></i>
+            </div>
+            <a href="cliniclist" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box " style="background-color:mediumaquamarine">
+            <div class="inner">
+              <h3>{{doctor}}</h3>
+
+              <p>Doctors</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <a href="doctorlist" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box bg-aqua">
+            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Total Appoirment</span>
+              <span class="info-box-number">{{totalrandevu}}</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- /.col -->
+
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box bg-red">
+            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Comments</span>
+              <span class="info-box-number">{{comments}}</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
+
+
+
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-calendar"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Active Appoinment Days</span>
+              <span class="info-box-number">{{days}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="fa fa-calendar"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Active Appoinment Hours</span>
+              <span class="info-box-number">{{hours}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7 connectedSortable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <section class="col-lg-5 connectedSortable">
+
+
+
+
+
+        </section>
+        <!-- right col -->
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
+  </div>
+
+
+
+
+
+
+
+
+  <app-adminFoot> </app-adminFoot>
+
+
+</div>
+
+<p *ngIf="userauthentication">
+  //Unauthorization
+
+</p>

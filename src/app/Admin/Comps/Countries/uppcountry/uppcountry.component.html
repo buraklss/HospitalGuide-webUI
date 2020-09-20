@@ -1,0 +1,98 @@
+<div class="wrapper" *ngIf="!userauthentication">
+  <app-adminNavbar> </app-adminNavbar>
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Update Country
+        <small>Control panel</small>
+      </h1>
+
+    </section>
+
+
+
+    <!-- addform star  -->
+    <div class="box box-info">
+      <div class="box-header with-border">
+
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form class="form-horizontal" #addcountry="ngForm" (ngSubmit)="postcountry()" enctype="multipart/form-data">
+        <div class="box-body" style="width:850px">
+          <div class="form-group">
+            <label for="countryname" class="col-sm-2 control-label">Country Name</label>
+
+            <div class="col-sm-10">
+              <input required [(ngModel)]="country.name" name="name" type="text" class="form-control" placeholder="Country Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="countryrouterlink" class="col-sm-2 control-label">Country Router Link</label>
+
+            <div class="col-sm-10">
+              <input required [(ngModel)]="country.routerlink" name="routerlink" type="text" class="form-control"
+                placeholder="Country Router Link">
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="cityrouterlink" class="col-sm-2 control-label">Country Flag</label>
+            <div class="col-sm-10">
+
+
+              <!-- <select [(ngModel)]="country.flagimage" name="flagimage"  class="custom-select custom-select-md form-control mr-sm-2" 
+                 required>
+              
+                <option value="assets\Flag1.jpg">Turkey</option>
+                <option value="assets\Flag2.jpg">Germany</option>
+                <option value="assets\canada.jpg">Canada</option>
+
+              </select> -->
+              <div class="form-group">
+                <label for="file">Choose File</label>
+                <input type="file" id="file" (change)="handleFileInput($event.target.value)" name="flagimage">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+            <P></P>
+            <input type="file" id="exampleInputFile">
+
+          </div> -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer" style="width:700px">
+          <button type="submit" class="btn btn-default " (click)="cancel()">CANCEL</button>
+          <button type="submit" class="btn btn-info pull-right">SAVE</button>
+        </div>
+        <!-- /.box-footer -->
+      </form>
+    </div>
+    <!--  -->
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <app-adminFoot> </app-adminFoot>
+
+
+</div>
+
+<p *ngIf="userauthentication">
+  //Unauthorization
+
+</p>
